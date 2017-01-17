@@ -1,0 +1,46 @@
+<head>      
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<h2 id="title">Current Auctions</h2>
+<span>Hi @ViewBag.User.UserName!</span>
+<a id="logout" href="/logout">Logout</a>
+<table id="auction">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Seller</th>
+            <th>Top Bid</th>
+            <th>Time Remain</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var a in ViewBag.Auctions)
+        {
+            var remain = (a.EndDate-DateTime.Now.Date).Days+1;
+            <tr>
+                <td><a href="/products/@a.AuctionId">@a.Name</a></td>
+                <td>@a.User.UserName</td>
+                <td>@a.Bid</td>
+                @if(remain > 1)
+                {
+                    <td>@remain Days</td>
+                }
+                else
+                {
+                    <td>@remain Day</td>
+                }
+                <td>
+                @if(a.UserId == ViewBag.User.UserId)
+                {
+                    <a href="/auctions/delete/@a.AuctionId" onclick=deleteConfirm()>Delete</a>
+                }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a id="auction" class="button-primary" href="/auctions">New Auction</a>
+<span>Your Current Wallet: $ @ViewBag.User.Wallet</span>

@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "ASP.NET Core MVC";
+}
+<h1>Welcome to QuotingDojo Redux, <span>@ViewBag.User.FirstName!</span></h1>
+<a asp-action="logout">Logout</a>
+<form id="quote" action="/quotes" method="post">
+    <p>Your quote:</p>
+    <textarea name="content" placeholder="write something here..."></textarea>
+    <button type="submit">Add my quote!</button>
+</form>
+<p id="quote">@ViewBag.Errors</p>
+@foreach(var quote in ViewBag.Quotes)
+{
+    <div class="quotes">
+        <p>"@quote.Content" &nbsp;&nbsp;&nbsp;&nbsp; <i>Likes: @quote.Likes</i><a id="like" asp-action="updateLikes" asp-route-id="@quote.Id">+1</a></p>
+        <p>- <b>@quote.Author.FirstName @quote.Author.LastName</b>&nbsp;&nbsp;&nbsp;&nbsp; at&nbsp;&nbsp;<i>@quote.Created_at.ToString("h:mmtt MMMM d yyyy")</i>
+            @if(quote.Author.Id == ViewBag.User.Id)
+            {
+                <a id="del" asp-action="delete" asp-route-id="@quote.Id" onClick=deleteConfirm()>Delete</a>
+            }
+        </p>
+    </div>
+}

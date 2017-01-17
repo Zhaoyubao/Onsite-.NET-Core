@@ -1,0 +1,13 @@
+<div class="quotes">   
+    <h3><i id="user">@ViewBag.user.FirstName</i> 's quotes:</h3>
+    @foreach(var quote in ViewBag.user.Quotes)
+    {
+        <p>"@quote.Content" &nbsp;&nbsp;&nbsp;&nbsp; <i>Likes: @quote.Likes</i><a id="like" asp-action="updateLikes" asp-route-id="@quote.QuoteId">+1</a></p>
+        <p class="date">at&nbsp;&nbsp;<i>@quote.CreatedAt.ToString("h:mmtt MMMM d yyyy")</i>
+        @if(ViewBag.id == ViewBag.user.UserId)
+        {
+            <a id="del" asp-action="delete" asp-route-id="@quote.QuoteId" onClick=deleteConfirm()>Delete</a>
+        }
+        </p>
+    }
+</div>

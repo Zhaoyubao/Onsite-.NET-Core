@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="Content/style.css">
+</head>
+<body>
+	<div id="wrapper">
+        <p id="gold">Your Gold: @ViewBag.Gold</p>
+        <div class="block">
+            <b>Farm</b>
+            <i>+10-20 Golds</i>
+            <a class="search" href="/process/farm">Search!</a>
+        </div>
+        <div class="block">
+            <b>Cave</b>
+            <i>+5-10 Golds</i>
+            <a class="search" href="/process/cave">Search!</a>
+        </div>
+        <div class="block">
+            <b>House</b>
+            <i>+earns 2-5 Golds</i>
+            <a class="search" href="/process/house">Search!</a>
+        </div>
+        <div class="block">
+            <b>Casino</b>
+            <i>&plusmn;0-50 Golds</i>
+            <a class="search" href="/process/casino">Search!</a>
+        </div>
+        <div id="action">
+            <b>Actions</b>
+            <div>
+                @Each
+                    @Current
+                @EndEach
+            </div>
+            <a id="reset" href="/reset">Reset</a>
+        </div>
+    </div>
+</body>
+</html>

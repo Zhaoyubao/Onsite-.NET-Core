@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "ASP.NET Core MVC";
+}
+<h1>Welcome to ASP.NET Core MVC, &nbsp;&nbsp;<span>@ViewBag.User.FirstName!</span></h1>
+    <a href="/logout">Logout</a>
+    <h3>User Info:</h3>
+    <table width="700">
+        <tr>
+            <th width="80">User ID</th>
+            <th width="150">First Name</th>
+            <th width="150">Last Name</th>
+            <th width="250">Email</th>
+        </tr>
+        <tr>
+            <td>@ViewBag.User.Id</td>
+            <td>@ViewBag.User.FirstName</td>
+            <td>@ViewBag.User.LastName</td>
+            <td>@ViewBag.User.Email</td>
+        </tr>
+    </table>

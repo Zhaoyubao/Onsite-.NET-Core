@@ -1,0 +1,45 @@
+<div>
+    <h2>ASP.NET Core - Wall</h2>
+    <a href="/logout">Logout</a>
+    <span>Welcome @ViewBag.user.FirstName !</span>
+</div>
+<p class="error">@ViewBag.errors</p>
+<p class="error">@ViewBag.err</p>
+<form id="message" action="/messages" method="post">
+    <p>Post a message</p>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Post a message">
+</form>
+@{
+    foreach(var msg in ViewBag.messages)
+    {
+        TimeSpan msgSpan = ViewBag.Now - msg.Created_at;
+        <p class="msg_user">@msg.Author.FirstName @msg.Author.LastName - </p>
+        <span id="msg_created">@msg.Created_at.ToString("MMMM d yyyy hh:mmtt")</span>
+        if(msg.Author.Id == ViewBag.user.Id && msgSpan.TotalMinutes <= 30)
+        {
+            <a id="msg_del" href="/messages/delete/@msg.Id" onclick=deleteConfirm()>Delete</a>
+        }
+        <p class="message">@msg.Content</p>
+        foreach(var comment in ViewBag.comments)
+        {
+            if(msg.Id == comment.Message_ID)
+            {
+                TimeSpan comSpan = ViewBag.Now - comment.Created_at;
+                <p class="comment_user">@comment.Author.FirstName @comment.Author.LastName - </p>
+                <span id="comment_created">@comment.Created_at.ToString("MMMM d yyyy hh:mmtt")</span>
+                if(comment.Author.Id == ViewBag.user.Id && comSpan.TotalMinutes <= 30)
+                {
+                    <a id="comment_del" href="/comments/delete/@comment.Id" onclick=deleteConfirm()>Delete</a>
+                }
+                <p class="comment">@comment.Content</p>
+            }
+        }
+        <form id="comment" action="/comments/@msg.Id" method="post">
+            <p>Post a comment</p>
+            <textarea name="content"></textarea>
+            <input type="submit" value="Post a comment">
+        </form>
+    }
+}
+

@@ -1,0 +1,52 @@
+h2, span, a {
+    display: inline-block;
+}
+h2 {
+    margin-left: 20px;
+    margin-right: 300px;
+}
+span {
+    font-size: 1.35em;
+    color: #009ac7;
+    text-transform: capitalize;
+}
+a {
+    font-size: 1.35em;
+    margin-left: 30px;
+}
+table#auction {
+    width: 80%;
+    margin: 40px auto;
+}
+    #auction * {
+        text-align: center;
+    }
+a#auction {
+    margin-left: 120px;
+    margin-right: 500px;
+}
+span.error {
+    color: orangered;
+    font-size: 0.9em;
+}
+
+form#auction {
+    width: 40%;
+    margin: 20px 0 0 100px;
+}
+    #auction label {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    #auction input {
+        width: 180px;
+        font-size: 1.1em;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    #auction textarea {
+        width: 200px;
+        height: 100px;
+        font-size: 1.4em;
+        text-align: left;
+    }

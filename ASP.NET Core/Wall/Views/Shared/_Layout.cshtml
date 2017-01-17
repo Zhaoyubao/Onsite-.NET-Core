@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <script type="text/javascript">
+        let deleteConfirm = () => window.event.returnValue = !confirm("Confirm Delete?") ? false : true;
+   </script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,21 @@
+<h2>@ViewBag.Name</h2>
+<sup>#@ViewBag.Id</sup>
+@ViewBag.imageUrl
+<h4>Type:</h4>
+<ul id="types">
+    <li>@ViewBag.PriType</li>
+    <li>@ViewBag.SecType</li>
+</ul>
+<h4>Height:</h4>
+<p>@ViewBag.Height</p>
+<h4>Weight:</h4>
+<p>@ViewBag.Weight</p>
+<h4>Stats:</h4>
+<ul id='stats'>
+    <li>HP:<span>@ViewBag.Hp</span></li>
+    <li>Attack:<span>@ViewBag.Attack</span></li>
+    <li>Defense:<span>@ViewBag.Defense</span></li>
+    <li>Sp.Atk:<span>@ViewBag.SpAtk</span></li>
+    <li>Sp.Def:<span>@ViewBag.SpDef</span></li>
+    <li>Speed:<span>@ViewBag.Speed</span></li>
+</ul>

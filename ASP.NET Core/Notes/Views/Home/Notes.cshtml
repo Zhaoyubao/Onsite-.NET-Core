@@ -1,0 +1,11 @@
+@foreach(var note in ViewBag.notes)
+{
+    <div class="note">
+        <form id="@note.Id" class="note">
+            <input class="title" name="title" value="@note.Title">
+            <p class="created">Updated at: @note.Created_at.ToString("MMM d, yyyy - h:mmtt")</p>
+            <textarea name="description" placeholder="Enter description here...">@note.Description</textarea>
+        </form>
+        <b id="@note.Id">Delete</b>
+    </div>
+}

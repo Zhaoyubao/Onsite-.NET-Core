@@ -1,0 +1,17 @@
+<head>      
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<h2 id="title">@ViewBag.Product.Name</h2>
+<span >Created by: @ViewBag.Product.User.UserName</span>
+<a id="back" href="/main">Home</a>
+<a id="logout" href="/logout">Logout</a>
+<h4>Time Remaining: @(ViewBag.Product.EndDate.Day-DateTime.Now.Day+1) day(s)</h4>
+<h5>Description: @ViewBag.Product.Description</h5>
+<h5>Current Higest Bid: $ @ViewBag.Product.Bid &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by: @ViewBag.Bidder </h5>
+<form id="bid" action="/products/@ViewBag.Product.AuctionId" method="post">
+    <input type="number" name="Bid" step="0.01" placeholder="Your bid...">
+    <span class="error">@ViewBag.Err</span>
+    <button type="">Bid!!</button>
+</form>

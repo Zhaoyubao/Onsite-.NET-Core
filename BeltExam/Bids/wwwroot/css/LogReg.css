@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    color: #3c4c5b;
+}
+form {
+    width: 400px;
+    margin-left: 100px;
+}
+    form * {
+        display: inline-block;
+    }
+    h2 {
+        width: 300px;
+        margin-bottom: 15px;
+    }
+    label {
+        width: 105px;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px;
+    }
+    input {
+        width: 250px;
+        color: #3c4c5b;
+        font-size: 1.1em;
+        outline: none;
+        border: 1px solid silver;
+        border-radius: 2px;
+        padding: 2px 5px;
+        margin-bottom: 25px;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 100px #fff inset;
+    }
+    form p {
+        margin-bottom: 15px;
+    }
+        p span {
+            color: white;
+            background-color: #009ac7;
+            font-weight: bold;
+            border-radius: 2px;
+            padding: 0 8px;
+        }
+    button {
+        font-size: 1em;
+        color: white;
+        background-color: #009ac7;
+        border: none;
+        border-radius: 2px;
+        outline: none;
+        box-shadow: 1px 1px 2px silver;
+        cursor: pointer;
+        margin-left: 300px;
+        padding: 4px 10px;
+    }
+    button:hover {
+        background-color: #007394;
+    }
+a#admin, a#back {
+    font-size: 1.4em;
+    margin-left: 100px;
+}
+form#register {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+form#login {
+    margin-bottom: 15px;
+    padding-top: 20px;
+    border-top: 1px solid silver;
+}
+form#admin {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+    #login button {
+        width: 80px;
+    }
+span.errors  {
+    color: orangered;
+    font-size: 0.9em;
+    position: absolute;
+}
+span.fname {
+    top: 120px;
+    left: 220px;
+}
+span.lname {
+    top: 171px;
+    left: 220px;
+}
+span.username {
+    top: 222px;
+    left: 220px;
+}
+span.pw {
+    top: 273px;
+    left: 220px;
+}
+span.confirm {
+    top: 324px;
+    left: 220px;
+}
+span.register {
+    top: 222px;
+    left: 220px;
+}
+span.login_user {
+    top: 547px;
+    left: 220px;
+}
+span.login_pw {
+    top: 599px;
+    left: 220px;
+}
+/*======================================*/
+h2#title {
+    width: 35%;
+    margin: 30px 0 30px 50px;
+}
+    h2#title span {
+        color: #009ac7;
+        font-style: italic;
+        text-transform: capitalize;
+        margin-left: 10px;
+    }
+h2#title, a#logout {
+    display: inline-block;
+}
+a#logout {
+    font-size: 1.4em;
+    margin-left: 50px;
+}
+/*==================================*/
+form#car {
+    width: 30%;
+    margin: 50px 0 0 50px;
+}
+    #car label {
+        width: 90%;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    #car input {
+        margin-bottom: 5px;
+    }
+    #car button {
+        margin-top: 30px;
+        margin-left: 160px;
+    }
+    span.carErr {
+        color: orangered;
+    }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <div id="navbar">
+        <h2>.NET Core Store</h2>
+        <a class="nav" id="highlight" asp-action="index">Dashboard</a>
+        <a class="nav" asp-action="products">Products</a>
+        <a class="nav" asp-action="orders">Orders</a>
+        <a class="nav" asp-action="customers">Customers</a>
+    </div>
+    <div id="prods">
+        @foreach(var prod in ViewBag.Products)
+        {
+            <div class="prod">
+                <img src="@prod.ImgUrl" alt="@prod.Name" title="@prod.Description">
+                <p>@prod.Name</p>
+                <p>(@prod.Quantity left)</p>
+            </div>
+        }
+    </div>
+    <ul>
+        <p>Recent Orders</p>
+        @foreach(var order in ViewBag.Orders)
+        {
+            <li><b>@order.User.Name</b> purchased <b>@order.Quantity @order.Product.Name</b>...</li>
+        }
+    </ul>
+    <ul>
+        <p>New Customers</p>
+        @foreach(var user in ViewBag.Users)
+        {
+            <li><b>@user.Name</b> joined the store. &nbsp;&nbsp;&nbsp;&nbsp;(@user.CreatedAt.ToString("MMMM dd yyyy"))</li>
+        }
+    </ul>
+</body>
+</html>

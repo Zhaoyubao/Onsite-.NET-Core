@@ -1,0 +1,17 @@
+<thead>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Date</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach(var order in ViewBag.User.Orders)
+    {
+        <tr>
+            <td>@order.Product.Name</td>
+            <td>@order.Quantity</td>
+            <td>@order.CreatedAt.ToString("MMMM dd yyyy, hh:mmtt")</td>
+        </tr>
+    }
+</tbody>

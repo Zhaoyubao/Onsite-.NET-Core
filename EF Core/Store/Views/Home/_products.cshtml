@@ -1,0 +1,8 @@
+ @foreach(var product in ViewBag.Products)
+{
+    <div class="product">
+        <img src="@product.ImgUrl" alt="@product.Name" title="@product.Description">
+        <p>@product.Name</p>
+        <p>(@product.Quantity left)<a href="/products/delete/@product.ProductId" onclick=deleteConfirm()>&#10060;</a></p>
+    </div>
+}

@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "ASP.NET Core";
+}
+<h1>Welcome to QuotingDojo</h1>
+<form action="/quotes" method="post">
+    <p>Your name:</p>
+    <input type="text" name="author">
+    <p>Your quote:</p>
+    <textarea name="quote" placeholder="write something here..."></textarea>
+    <button>Add my quote!</button>
+    <a href="/quotes">Skip to quotes!</a>
+</form>
+@foreach(var error in ViewBag.errors)
+{
+    <p class="errors">@error</p>
+}

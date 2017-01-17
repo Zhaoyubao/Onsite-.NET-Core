@@ -1,0 +1,19 @@
+<head>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+@model CarRental.Models.Car
+
+<form id="car" asp-action="AddCar" method="post">
+    <h3>Create New Entry</h3>
+    <label>Make of Car</label>
+    <input asp-for="Make">
+    <span class="carErr" asp-validation-for="Make"></span>
+    <label>Model of Car</label>
+    <input asp-for="Model">
+    <span class="carErr" asp-validation-for="Model"></span>
+    <label>Number of new entries</label>
+    <input type="number" min="1" step="1" max="100" asp-for="Inventory" value="1">
+    <span class="carErr" asp-validation-for="Inventory"></span>
+    <button class="button-primary" type="submit">Add Car</button>
+</form>

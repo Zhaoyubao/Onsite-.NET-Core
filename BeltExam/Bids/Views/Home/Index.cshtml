@@ -1,0 +1,36 @@
+<head>  
+    <link rel="stylesheet" href="~/css/LogReg.css">
+</head>
+@model BeltExam.Models.UserViewModel
+
+<form id="register" asp-action="Register" method="post">
+    <h2>Registration</h2>
+    <label>First Name:</label>
+    <input asp-for="FirstName">
+    <label>Last Name:</label>
+    <input asp-for="LastName">
+    <label>UserName:</label>
+    <input asp-for="UserName">
+    <label>Password:</label>
+    <input asp-for="Password">
+    <label>Confirm pw:</label>
+    <input asp-for="Confirm">
+    <p><span>i</span>&nbsp; Passwords must be at least 8 characters long, contains a special character and at least one number.</p>
+    <button type="submit">Register</button>
+</form>
+<form id="login" action="/login" method="post">
+    <h2>Login</h2>
+    <label>Username:</label>
+    <input type="text" name="username">
+    <label>Password:</label>
+    <input type="password" name="pw">
+    <button type="submit">Login</button>
+</form>
+<span class="errors fname" asp-validation-for="FirstName"></span>
+<span class="errors lname" asp-validation-for="LastName"></span>
+<span class="errors username" asp-validation-for="UserName"></span>
+<span class="errors pw" asp-validation-for="Password"></span>
+<span class="errors confirm" asp-validation-for="Confirm"></span>
+<span class="errors register">@ViewBag.RegUserErr</span>
+<span class="errors login_user">@ViewBag.LogUserErr</span>
+<span class="errors login_pw">@ViewBag.LogPwErr</span>

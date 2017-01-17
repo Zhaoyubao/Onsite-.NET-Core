@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Login&Registration";
+}
+@model Wall.Models.User
+
+<form id="register" asp-controller="Home" asp-action="register" method="post">
+    <h2>Registration</h2>
+    <label>First Name:</label>
+    <input asp-for="FirstName">
+    <label>Last Name:</label>
+    <input asp-for="LastName">
+    <label>Email:</label>
+    <input asp-for="Email" placeholder="ex:name@example.com">
+    <label>Password:</label>
+    <input asp-for="Password">
+    <label>Confirm pw:</label>
+    <input asp-for="Confirm">
+    <p><span>i</span>&nbsp; Name must be at least 2 characters and letters only. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passwords must be at least 8 characters in length.</p>
+    <button type="submit">Register</button>
+</form>
+<form id="login" action="/login" method="post">
+    <h2>Login</h2>
+    <label>Email:</label>
+    <input type="text" name="email">
+    <label>Password:</label>
+    <input type="password" name="pw">
+    <button type="submit">Login</button>
+</form>
+<span class="errors fname" asp-validation-for="FirstName"></span>
+<span class="errors lname" asp-validation-for="LastName"></span>
+<span class="errors email" asp-validation-for="Email"></span>
+<span class="errors pw" asp-validation-for="Password"></span>
+<span class="errors confirm" asp-validation-for="Confirm"></span>
+<span class="errors register">@ViewBag.RegEmailErr</span>
+<span class="errors login_email">@ViewBag.LogEmailErr</span>
+<span class="errors login_pw">@ViewBag.LogPwErr</span>

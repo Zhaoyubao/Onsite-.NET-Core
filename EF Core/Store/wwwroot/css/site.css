@@ -1,0 +1,247 @@
+div#navbar {
+    border-bottom: 2px solid #33C3F0;
+    margin-top: 10px;
+    padding-bottom: 2px;
+}
+    #navbar h2 {
+        margin-left: 30px;
+        display: inline;
+    }
+    a.nav {
+        font-size: 1.5em;
+        text-decoration: none;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        margin-right: 50px;
+        padding: 10px 40px;
+    }
+    a.nav:first-of-type {
+        margin-left: 60px;
+    }
+    a.nav:hover {
+        color: #007394;
+    }
+    a#highlight {
+        color: white;
+        background-color: #33C3F0;
+    }
+
+.error {
+    font-size: 0.7em;
+    font-style: italic;
+    color: orangered;
+    margin: 5px 0 0 190px;
+}
+
+div#customer {
+    width: 55%;
+    margin: 50px auto;
+}
+        form p {
+            color: #33C3F0;
+            font-size: 1.4em;
+            text-decoration: underline;
+        }
+        form span {
+            font-size: 1.3em;
+        }
+        form input {
+            font-size: 1.1em;
+            width: 240px;
+            margin-left: 40px;
+            margin-right: 20px;
+        }
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 100px #fff inset;
+        }
+    input#searchCustomer {
+        font-size: 1.2em;
+        width: 150px;
+        margin-left: 650px;
+    }
+    #customer table {
+        width: 90%;
+        margin: 10px auto;
+    }
+        th {
+            font-size: 1.2em;
+            text-align: center;
+            color: #33C3F0;
+        }
+        td {
+            font-size: 1.1em;
+            text-align: center;
+            text-transform: capitalize;
+            padding: 5px;
+        }
+            td a.del {
+                color: orangered;
+                font-weight: bold;
+                font-size: 0.9em; 
+                text-decoration: none;
+            }
+
+div#orders {
+    width: 45%;
+    margin: 0 auto;
+}
+    div#orders span {
+        font-size: 1.2em;
+    }
+    div#orders select {
+        width: 180px;
+        font-size: 1.1em;
+        text-transform: capitalize;
+    }
+    div#orders table {
+        width: 100%;
+    }
+
+/*===============================================================*/
+form#product {
+    width: 200px;
+    margin: 50px 0 0 30px;
+}
+    #product p {
+        margin: 40px 0 30px 0;
+    }
+    #product label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    #product input {
+        width: 100%;
+        margin: 0;
+    }
+    #product span {
+        font-size: 0.9em;
+        font-style: italic;
+        color: orangered;
+    }
+    textarea {
+        width: 100%;
+        height: 80px;
+        font-family: "Roboto", Arial;
+        font-size: 1.1em;
+        resize: none;
+        overflow: auto;
+        margin-bottom: 10px;
+    }
+    #product button {
+        margin: 10px 0 0 120px;
+    }
+form#product, div#products {
+    display: inline-block;
+    vertical-align: top;
+}
+div#products {
+    width: 1200px;
+    height: 520px;
+    overflow: auto;
+    margin: 50px 0 0 70px;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+    div.product {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 50px;
+        margin-bottom: 40px;
+    }
+        .product img {
+            width: 180px;
+            height: 160px;
+            margin-bottom: 10px;
+        }
+        .product p {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .product p:last-of-type {
+            text-align: right;
+        }
+            .product p a {
+                font-size: 0.6em;
+                color: orangered;
+                text-decoration: none;
+                margin-left: 40px;
+            }
+
+/*============================================================*/
+form#order {
+    margin: 30px 0 0 40px;
+}
+    #order p {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    #order input {
+        width: 100px;
+        margin: 0 5px 0 15px;
+    }
+    #order select {
+        width: 180px;
+        font-size: 1em;
+        margin-left: 15px;
+        margin-right: 40px;
+    }
+    select#user {
+        text-transform: capitalize;
+    }
+    #order i {
+        font-size: 0.9em;
+        color: orangered;
+    }
+table#order {
+    width: 1000px;
+    margin: 30px auto;
+}
+/*----------------------------------------------------*/
+div #prods {
+    width: 1000px;
+    height: 200px;
+    margin-top: 20px;
+}
+    div.prod {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 50px;
+        margin-bottom: 40px;
+    }
+        .prod img {
+            width: 180px;
+            height: 160px;
+            margin-bottom: 10px;
+        }
+        .prod p {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+ul {
+    list-style: none;
+    margin: 0 0 40px 50px;
+}
+    ul p {
+        color: #33C3F0;
+        font-size: 1.6em;
+        text-decoration: underline;
+    }
+    ul li {
+        font-size: 1.3em;
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+        li b {
+            text-transform: capitalize;
+        }

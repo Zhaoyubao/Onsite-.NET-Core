@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Notes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="icon" href="~/favicon.ico">
+</head>
+<body>
+    <h1>Notes</h1>
+    <form id="add" onkeydown="if(event.keyCode == 13) return false;">
+        <input type="text" name="title" placeholder="Insert note title here...">
+        <button id="add" type="submit">Add Note</button>
+    </form>
+    <p id="error"></p>
+    <div id="tip">Click to edit!</div>
+    <div id="notes">
+    @foreach(var note in ViewBag.notes)
+    {
+        <div class="note">
+            <form id="@note.Id" class="note">
+                <input class="title" name="title" value="@note.Title">
+                <p class="created">Updated at: @note.Created_at.ToString("MMM d, yyyy - h:mmtt")</p>
+                <textarea name="description" placeholder="Enter description here...">@note.Description</textarea>
+            </form>
+            <b id="@note.Id">Delete</b>
+        </div>
+    }
+    </div>
+</body>
+</html>

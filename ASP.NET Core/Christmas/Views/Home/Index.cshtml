@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Christmas Page</h1>
+@{
+    if(ViewBag.ourTree.kill == true)
+    {
+        if(ViewBag.ourTree.pretty == true)
+        {
+            <img src="http://previews.123rf.com/images/mirage3/mirage31212/mirage3121200024/16984149-End-of-the-holidays-or-other-concept-dead-fir-Christmas-tree-with-dried-up-needles-star-garland-and--Stock-Photo.jpg">
+        }
+        else
+        {
+            <h3>Tree's decoration rating: @ViewBag.ourTree.decorating</h3>
+            <form action="decorate" method="post">
+                <button>Decorate!</button>
+            </form>
+            <img src="http://o.aolcdn.com/dims-shared/dims3/GLOB/crop/4276x2848+4+0/resize/640x426!/format/jpg/quality/85/http://hss-prod.hss.aol.com/hss/storage/midas/6c0551b3ef5dc3851242d894e15f9482/201228682/121763400.jpg">
+        }
+    }
+    else
+    {
+        <p>Cut down the christmas tree</p>
+        <h3>Tree Health: @ViewBag.ourTree.health</h3>
+        <form method='post' action='chop'>
+            <button type="">Chop!</button>
+        </form>
+    }
+}

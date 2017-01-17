@@ -1,0 +1,17 @@
+<thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach(var user in ViewBag.Users)
+    {
+        <tr>
+            <td>@user.Name</td>
+            <td>@user.CreatedAt.ToString("MMMM dd yyyy hh:mmtt")</td>
+            <td><a class="del" href="/customers/delete/@user.UserId" onclick=deleteConfirm()>Remove</a></td>
+        </tr>
+    }
+</tbody>

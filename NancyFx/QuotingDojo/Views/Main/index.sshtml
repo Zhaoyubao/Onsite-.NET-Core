@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuotingDojo</title>
+    <link rel="stylesheet" href="Content/style.css">
+</head>
+<body>
+	<h1>Welcome to QuotingDojo</h1>
+    <form action="/quotes" method="post">
+        <p>Your name:</p>
+        <input type="text" name="name">
+        <p>Your quote:</p>
+        <textarea name="quote" placeholder="write something here..."></textarea>
+        <button>Add my quote!</button>
+        <a href="/quotes">Skip to quotes!</a>
+    </form>
+    @ViewBag.errors
+</body>
+</html>

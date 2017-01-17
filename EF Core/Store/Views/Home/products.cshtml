@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+    <script type="text/javascript">
+        function deleteConfirm() {
+            if(!confirm("Confirm Delete?"))
+                window.event.returnValue = false;
+        }
+    </script>
+</head>
+<body>
+    <div id="navbar">
+        <h2>.NET Core Store</h2>
+        <a class="nav" asp-action="index">Dashboard</a>
+        <a class="nav" id="highlight" asp-action="products">Products</a>
+        <a class="nav" asp-action="orders">Orders</a>
+        <a class="nav" asp-action="customers">Customers</a>
+    </div>
+    @model Store.Models.Product
+
+    <form id="product" asp-action="AddProduct" method="post">
+        <input id="searchProduct" type="text" name="product" placeholder="search...">
+        <p>Add a new product</p>
+        <label>Name:</label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span>
+        <label>Image(url):</label>
+        <input asp-for="ImgUrl" placeholder="http://">
+        <label>Description</label>
+        <textarea asp-for="Description"></textarea>
+        <label>Initial Quantity:</label>
+        <input type="number" min="1" step="1" max="100" asp-for="Quantity" value="1" required>
+        <button class="button-primary">Create</button>
+    </form>
+    <div id="products">
+        @foreach(var product in ViewBag.Products)
+        {
+            <div class="product">
+                <img src="@product.ImgUrl" alt="@product.Name" title="@product.Description">
+                <p>@product.Name</p>
+                <p>(@product.Quantity left)<a href="/products/delete/@product.ProductId" onclick=deleteConfirm()>&#10060;</a></p>
+            </div>
+        }
+    </div>
+</body>
+</html>

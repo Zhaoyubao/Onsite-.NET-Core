@@ -1,0 +1,15 @@
+<head>  
+    <link rel="stylesheet" href="~/css/logReg.css">
+</head>
+
+<form id="admin" action="/admin" method="post">
+    <h2>Admin Login</h2>
+    <label>Username:</label>
+    <input type="text" name="username">
+    <label>Password:</label>
+    <input type="password" name="pw">
+    <button type="submit">Login</button>
+</form>
+<span class="errors admin_email">@ViewBag.LogUserErr</span>
+<span class="errors admin_pw">@ViewBag.LogPwErr</span>
+<a id="back" href="/">Go Back</a>

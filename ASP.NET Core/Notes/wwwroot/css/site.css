@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    color: #3c4c5b;
+}
+h1 {
+    width: 230px;
+    background-color: white;
+    position: fixed;
+    text-shadow: 1px 1px 2px #ddd;
+    padding-bottom: 10px;
+    margin: 10px 0 0 20px;
+    border-bottom: 1px solid silver;
+}
+form, div#notes {
+    display: inline-block;
+    vertical-align: top;
+}
+form#add {
+    width: 250px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    margin: 20px 0 0 15px;
+}
+    form#add input {
+        width: 210px;
+        font-size: 1em;
+        border-radius: 3px;
+        border: 1px solid silver;
+        outline: none;
+        padding: 6px 8px;
+        margin-top: 10px;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 100px #fff inset;
+    }
+    button#add {
+        color: white;
+        font-size: 0.9em;
+        background-color: #009ac7;
+        border: none;
+        border-radius: 2px;
+        outline: none;
+        box-shadow: 1px 1px 2px #ccc;
+        margin-top: 15px;
+        padding: 4px 10px;
+    }
+    button#add:hover {
+        cursor: pointer;
+        background-color: #007394;
+    }
+p#error {
+    color: orangered;
+    position: absolute;
+    position: fixed;
+    top: 130px;
+    left: 108px;
+}
+
+div#tip {
+    background-color: Beige;
+    font-size: 0.8em;
+    border: 1px solid gray;
+    border-radius: 2px;
+    opacity: 0.9;
+    padding: 2px 4px;
+    position: absolute;
+    display: none;
+}
+div#notes {
+    width: 750px;
+    margin-left: 300px;
+}
+    div.note {
+        width: 280px;
+        height: 270px;
+        border-bottom: 1px solid #ddd;
+        margin: 20px;
+        display: inline-block;
+    }
+        form.note, a {
+            display: inline-block;
+        }
+            form.note input {
+                width: 215px;
+                font-size: 1.2em;
+                font-weight: bold;
+                border: none;
+                outline: none;
+                margin-bottom: 8px;
+            }
+            form.note input:hover {
+                cursor: pointer;
+                border-bottom: 1px solid silver;
+            }
+            form.note p {
+                font-size: 0.7em;
+                margin-bottom: 4px;
+            }
+            form.note textarea {
+                width: 200px;
+                height: 180px;
+                font-size: 0.9em;
+                box-shadow: 1px 1px 2px #ccc;
+                outline: none;
+                overflow: auto;
+                resize: none;
+                padding: 8px;
+            }
+            form.note textarea:hover {
+                cursor: pointer;
+            }
+        b {
+            color: orangered;
+            font-size: 0.9em;
+            text-decoration: none;
+            margin: 5px 0 0 5px;
+        }
+        b:hover {
+            cursor: pointer;
+            color: firebrick;
+        }

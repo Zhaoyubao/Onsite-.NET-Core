@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="NancyFx">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="Content/style.css">
+</head>
+<body>
+    @Each
+    <h1>Welcome to NancyFx, &nbsp;&nbsp;<span>@Current.first_name!</span></h1>
+    <a href="/logout">Logout</a>
+    <h3>User Info:</h3>
+    <table width="700">
+        <tr>
+            <th width="80">User ID</th>
+            <th width="150">First Name</th>
+            <th width="150">Last Name</th>
+            <th width="250">Email</th>
+        </tr>
+        <tr>
+            <td>@Current.id</td>
+            <td>@Current.first_name</td>
+            <td>@Current.last_name</td>
+            <td>@Current.email</td>
+        </tr>
+    </table>
+    @EndEach
+</body>
+</html>

@@ -1,0 +1,49 @@
+<head>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<h2 id="title">Welcome <span>@ViewBag.User.UserName!</span></h2>
+<a href="#">Your account</a>
+<a href="/rent">Rent a car</a>
+<a id="logout" href="/logout">Logout</a>
+<table>
+    <h4>Current Rentals</h4>
+    <thead>
+        <tr>
+            <th>Car Type</th>
+            <th>Return Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var rental in @ViewBag.Rentals)
+        {
+            <tr>
+                <td>@rental.Car.Make @rental.Car.Model</td>
+                <td>@rental.ReturnDate.ToString("MMMM dd yyyy")</td>
+                <td><a href="/rent/@rental.RentalId">Return</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<table>
+    <h4>Overdue Rentals</h4>
+    <thead>
+        <tr>
+            <th>Car Type</th>
+            <th>Return Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var rental in @ViewBag.Overdues)
+        {
+            <tr>
+                <td>@rental.Car.Make @rental.Car.Model</td>
+                <td>@rental.ReturnDate.ToString("MMMM dd yyyy")</td>
+                <td><a href="/rent/@rental.RentalId">Return</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

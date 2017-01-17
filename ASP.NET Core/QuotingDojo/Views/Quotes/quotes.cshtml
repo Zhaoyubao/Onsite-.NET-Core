@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "ASP.NET Core";
+}
+<h2>Here are the awsome quotes!</h2>
+@foreach(var quote in ViewBag.Quotes)
+{
+    <div>
+        <p>"@quote.Content" &nbsp;&nbsp;&nbsp;&nbsp; <i>Likes: @quote.Likes</i><a id="like" href="/quotes/likes/@quote.Id">+1</a></p>
+        <p>- @quote.Author &nbsp;&nbsp;&nbsp;&nbsp; at&nbsp;&nbsp;<i>@quote.Date</i>
+            <a id="del" href="/quotes/delete/@quote.Id" onClick=deleteConfirm()>Delete</a>
+        </p>
+    </div>
+}
+<a href="/">Go Back</a> 

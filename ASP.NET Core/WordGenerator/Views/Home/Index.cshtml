@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "ASP.NET Core";
+}
+<p>
+    <span>Random Word</span>
+    @if(ViewBag.Count > 0)
+    {
+        <span>(Attempt #@ViewBag.Count)</span>
+    }
+</p>
+<div>@ViewBag.Word</div>
+<a href="/">Generate</a>
+<a href="/reset">Reset</a>

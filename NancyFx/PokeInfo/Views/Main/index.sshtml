@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeInfo</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready( function() {
+            for(var i = 1; i <= 151; i++) {
+                var num = ("00"+i).slice(-3);
+                $("#pokedex").append("<div class='pokemon'><span id='num'>#" + num + "</span><img class='sprites' id='" + i + "' src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + i + ".png' title='Click for details!'></div>");
+            }
+            $("#pokedex").on("click", "img", function() {
+                var id = $(this).attr("id");
+                var url = "/pokemon/" + id;
+                $.get(url, function(res) {
+                    $("#stats").html(res);
+                });
+            })
+        })
+    </script>
+    <link rel="stylesheet" href="Content/style.css">
+</head>
+<body>
+	<h1>Pokedex</h1>
+    <div id="pokedex">
+    </div>
+    <div id="stats">
+    </div>
+</body>
+</html>

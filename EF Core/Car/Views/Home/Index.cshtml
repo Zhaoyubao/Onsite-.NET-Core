@@ -1,0 +1,34 @@
+<head>  
+    <link rel="stylesheet" href="~/css/logReg.css">
+</head>
+@model CarRental.Models.UserViewModel
+
+<form id="register" asp-action="Register" method="post">
+    <h2>Registration</h2>
+    <label>Full Name:</label>
+    <input asp-for="FullName">
+    <label>User Name:</label>
+    <input asp-for="UserName">
+    <label>Password:</label>
+    <input asp-for="Password">
+    <label>Confirm pw:</label>
+    <input asp-for="Confirm">
+    <p><span>i</span>&nbsp; Name must be at least 2 characters and letters only. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passwords must be at least 8 characters in length.</p>
+    <button type="submit">Register</button>
+</form>
+<form id="login" action="/login" method="post">
+    <h2>Login</h2>
+    <label>Username:</label>
+    <input type="text" name="username">
+    <label>Password:</label>
+    <input type="password" name="pw">
+    <button type="submit">Login</button>
+</form>
+<a id="admin" href="/admin">Admin Login</a>
+<span class="errors fullname" asp-validation-for="FullName"></span>
+<span class="errors username" asp-validation-for="UserName"></span>
+<span class="errors pw" asp-validation-for="Password"></span>
+<span class="errors confirm" asp-validation-for="Confirm"></span>
+<span class="errors register">@ViewBag.RegUserErr</span>
+<span class="errors login_email">@ViewBag.LogUserErr</span>
+<span class="errors login_pw">@ViewBag.LogPwErr</span>

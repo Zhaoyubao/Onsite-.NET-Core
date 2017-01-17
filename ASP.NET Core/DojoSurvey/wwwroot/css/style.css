@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    color: #3e4e5a;
+}
+html {
+    font-size: 20px;
+}
+    form {
+        width: 23.5rem;
+        border: 1px solid gray;
+        box-shadow: 0 0 5px silver;
+        padding: 1rem 1.5rem;
+        margin: 3rem auto;
+    }
+        form * {
+            font-size: 1rem;
+            display: inline-block;
+        }
+        input, select {
+            width: 10rem;
+            outline: none;
+            border: 1px solid gray;
+            padding: 3px 6px;
+            margin-bottom: 0.8rem;
+        }
+        label {
+            width: 10rem;
+        }
+        textarea {
+            width: 20rem;
+            height: 6rem;
+            resize: none;
+            outline: none;
+            border: 1px solid gray;
+            overflow: auto;
+            padding: 4px 10px;
+            margin: 1rem 0 0.5rem;
+        }
+        button {
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 1px 1px 2px silver;
+            padding: 1px 4px;
+            margin-left: 16.5rem;
+        }
+
+    div {
+        width: 23.5rem;
+        border: 1px solid gray;
+        box-shadow: 0 0 5px silver;
+        padding: 1rem 1.5rem;
+        margin: 3rem auto;
+    }
+        p {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            display: inline-block;
+            vertical-align: top;
+        }
+        ul#item {
+            margin-left: 0.8rem;
+        }
+            li {
+                width: 10rem;
+                height: 1rem;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            ul#item li {
+                width: 9rem;
+            }
+            ul#user li:last-of-type {
+                height: 8rem;
+                overflow: auto;
+                word-wrap: break-word;
+            }
+        a {
+            color: black;
+            font-size: 0.9rem;
+            background-color: #eee;
+            border: 1px solid silver;
+            text-decoration: none;
+            box-shadow: 1px 1px 2px silver;
+            margin-left: 15.5rem;
+            padding: 2px 6px;
+        }

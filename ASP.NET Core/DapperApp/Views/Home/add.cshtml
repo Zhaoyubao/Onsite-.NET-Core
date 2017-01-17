@@ -1,0 +1,14 @@
+@model DapperApp.Models.User
+
+<h2>Create New User</h2>
+<!--@Html.AntiForgeryToken()-->
+<form action="/new" method="post">
+    @Html.AntiForgeryToken()
+    @Html.LabelFor(m => m.first_name)
+    @Html.TextBoxFor(m => m.first_name)
+    @Html.ValidationMessageFor(m => m.first_name)
+    @Html.LabelFor(m => m.last_name)
+    @Html.TextBoxFor(m => m.last_name)
+    @Html.ValidationMessageFor(m => m.last_name)
+    <input type="submit" value="Add new user">
+</form>

@@ -1,0 +1,23 @@
+<head>      
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+@model BeltExam.Models.Auction
+
+<h2 id="title">New Auction</h2>
+<a href="/main">Home</a>
+<a id="logout" href="/logout">Logout</a>
+<form id="auction" asp-action="AddAuction" method="post">
+    <label>Product Name</label>
+    <input asp-for="Name">
+    <span class="error" asp-validation-for="Name"></span>
+    <label>Starting Bid</label>
+    <input type="number" min="0.01" step="0.01" asp-for="Bid">
+    <span class="error" asp-validation-for="Bid"></span>
+    <label>Description</label>
+    <textarea asp-for="Description"></textarea>
+    <span class="error" asp-validation-for="Description"></span>
+    <label>End Date</label>
+    <input type="date" name="EndDate" min="@ViewBag.Date" value="@ViewBag.Date" required>
+    <button class="button-primary" type="submit">Create Auction</button>
+</form>

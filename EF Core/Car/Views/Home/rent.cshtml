@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<a href="/">Go Home</a>
+<h2>Rent A Car</h2>
+<form id="rent" action="/rent" method="post">
+    <h4>Cars available for rent</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Selection</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var car in ViewBag.Cars)
+            {
+                <tr>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>
+                        <input type="radio" name="CarId" value="@car.CarId" required>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <input type="date" name="ReturnDate" min="@ViewBag.Min" max="@ViewBag.Max" value="@ViewBag.Min" placeholder="Choose the return date..." required>
+    <button class="button-primary" type="submit">Rent!</button>
+</form>

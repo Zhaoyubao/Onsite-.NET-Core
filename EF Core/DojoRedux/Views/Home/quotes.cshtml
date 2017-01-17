@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoting Dojo Redux</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <link rel="stylesheet" href="~/css/site.css">
+    <script type="text/javascript">
+        function deleteConfirm() {
+            if(!confirm("Confirm Delete?"))
+                window.event.returnValue = false;
+        }
+    </script>
+</head>
+<body>
+    @model QuotingRedux.Models.QuoteViewModel
+
+    <h1>Welcome to QuotingDojo Redux, <span>@ViewBag.User.FirstName!</span></h1>
+    <a asp-action="logout">Logout</a>
+    <form id="quote" asp-controller="Home" asp-action="addQuotes" method="post">
+        <p>Your quote:</p>
+        <textarea asp-for="Content" placeholder="write something here..."></textarea>
+        <button type="submit">Add my quote!</button>
+    </form>
+    <span id="quote" asp-validation-for="Content"></span>
+    @foreach(var quote in ViewBag.Quotes)
+    {
+        <div class="quotes">
+            <p>"@quote.Content" &nbsp;&nbsp;&nbsp;&nbsp; <i>Likes: @quote.Likes</i><a id="like" asp-action="updateLikes" asp-route-id="@quote.QuoteId">+1</a></p>
+            <p>- <b id="@quote.User.UserId">@quote.User.FirstName @quote.User.LastName</b>&nbsp;&nbsp;&nbsp;&nbsp; at&nbsp;&nbsp;<i>@quote.CreatedAt.ToString("h:mmtt MMMM d yyyy")</i>
+                @if(quote.UserId == ViewBag.User.UserId)
+                {
+                    <a id="del" asp-action="delete" asp-route-id="@quote.QuoteId" onclick=deleteConfirm()>Delete</a>
+                }
+            </p>
+        </div>
+    }
+    <div id="quotes">
+    </div>
+</body>
+</html>

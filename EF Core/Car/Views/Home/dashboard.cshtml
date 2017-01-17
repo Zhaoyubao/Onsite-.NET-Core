@@ -1,0 +1,62 @@
+<head>
+    <link rel="stylesheet" href="~/css/skeleton.css">
+    <link rel="stylesheet" href="~/css/site.css">
+    <script type="text/javascript">
+        function deleteConfirm() {
+            if(!confirm("Confirm Delete?"))
+                window.event.returnValue = false;
+        }
+    </script>
+</head>
+    <form id="order" action="/orders" method="post">
+        <p>Add a new order</p>
+        <span>Customer:</span>
+        <select name="UserId">
+            @foreach(var user in ViewBag.Users)
+            {
+                <option value="@user.UserId">@user.Name</option>
+            }
+        </select>
+        <span>Order:</span>
+        <input type="number" name="Quantity" min="1" step="1" placeholder="quantity" required>
+        <i>@ViewBag.Err</i>
+        <select name="ProductId">
+            @foreach(var prod in ViewBag.Products)
+            {
+                if(@prod.Quantity == 0)
+                {
+                    <option value="@prod.ProductId" disabled="disabled">@prod.Name - Unavailable</option>
+                }
+                else
+                {
+                    <option value="@prod.ProductId">@prod.Name - max:@prod.Quantity</option>
+                }                
+            }
+        </select>
+        <button class="button-primary">Orders</button>
+    </form>
+    <table id="order">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var order in ViewBag.Orders)
+            {
+                <tr>
+                    <td>@order.User.Name</td>
+                    <td>@order.Product.Name</td>
+                    <td>@order.Quantity</td>
+                    <td>@order.CreatedAt.ToString("MMMM dd yyyy, hh:mmtt")</td>
+                    <td><a class="del" href="/orders/delete/@order.OrderId" onclick=deleteConfirm()>Cancel</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
